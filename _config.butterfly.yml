@@ -1199,7 +1199,7 @@ snackbar:
   # 是否啟用 Snackbar
   enable: true
   # 通知位置
-  position: bottom-left
+  position: top-center
   # 淺色模式和深色模式下的通知背景顏色
   bg_light: '#49b1f5'
   bg_dark: '#1f1f1f'
