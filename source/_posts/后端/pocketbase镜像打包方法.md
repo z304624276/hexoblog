@@ -8,7 +8,7 @@ cover:
 
 # pocketbase镜像打包方法
 记录一下pocketbase镜像打包方法，免得忘记了
-## 1. 首先创建文件Dockerfile，内容如下
+## 首先创建文件Dockerfile，内容如下
 ```Dockerfile
 FROM alpine:latest
 
@@ -38,11 +38,11 @@ CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8080"]
 ```
 
 ## 打包方法：
-1. 不写版本号的方法
+不写版本号的方法
 ```
 docker build -t my-pocketbase-image .
 ```
-2. 写版本号的方法
+写版本号的方法
 ```
 docker build -t pocketbase:${PB_VERSION} .
 ```
