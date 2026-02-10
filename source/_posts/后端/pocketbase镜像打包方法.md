@@ -49,7 +49,7 @@ docker build -t pocketbase:${PB_VERSION} .
 用pocketbase:版本号，需要先执行
 
 ```
-export PB_VERSION=0.25.8
+export PB_VERSION=0.36.2
 ```
 
 ## 需要注意的地方
