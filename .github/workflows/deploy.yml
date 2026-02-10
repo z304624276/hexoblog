@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions: # <--- 添加或确认存在此部分
+      contents: write # <--- 确保有此行
 
     steps:
       - name: Checkout code
