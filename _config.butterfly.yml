@@ -17,9 +17,10 @@ menu:
   分类: /categories/ || fas fa-folder-open
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
-  列表||fas fa-list:
-    友情链接: /link/ || fas fa-link
-    关于我: /about/ || fas fa-heart
+  说说: /shuoshuo/ || fas fa-comment
+  收藏: /link/ || fas fa-link
+  # 列表||fas fa-list:
+  #   关于我: /about/ || fas fa-heart
   
 
 
