@@ -125,6 +125,6 @@ bcrypt.hash(myPlaintextPassword, saltRounds, function (err, hash) {
 这样就可以生成一个hash了
 
 ### 结束
-框架使用笔记完毕，目前用到的就这么多，如果后续有需要，会继续更新
+框架使用笔记完毕，目前用到的就这么多，后续会更新详细的用法
 
 
