@@ -370,7 +370,7 @@ aside:
     # 是否顯示作者信息卡片
     enable: true
     # 作者描述
-    description: 一个全栈开发者 / PHP & Java & Vue &技术爱好者 / 记录生活
+    description: 一个技术爱好者 / 记录生活
     button:
       # 是否顯示按鈕
       enable: true
