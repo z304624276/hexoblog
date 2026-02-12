@@ -1,8 +1,8 @@
 ---
 title: supabase自部署方法
 date: 2026-02-12 00:41:30
-categories:
-tags:
+categories: [后端, Postgresql]
+tags: [supabase]
 cover:
 ---
 
@@ -49,7 +49,9 @@ SERVICE_ROLE_KEY= #SERVICE_ROLE_KEY  是服务角色的密钥，需要自己生�
 DASHBOARD_USERNAME #DASHBOARD_USERNAME  是仪表盘的用户名，需要自己生成
 DASHBOARD_PASSWORD  #DASHBOARD_PASSWORD  是仪表盘的密码，需要自己生成
 ```
-https://supabase.com/docs/guides/self-hosting/docker#参考文档
+查看文档  
+
+https://supabase.com/docs/guides/self-hosting/docker#generate-and-configure-api-keys
 
 ## 访问项目
 部署完成后访问项目
