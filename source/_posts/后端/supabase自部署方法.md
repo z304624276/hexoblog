@@ -3,7 +3,7 @@ title: supabase自部署方法
 date: 2026-02-12 00:41:30
 categories: [后端, Postgresql]
 tags: [supabase]
-cover:
+cover: https://img.tanlugeek.dpdns.org/i/2026/02/13/698f45b74bd88.jpg
 ---
 
 ## supabase自部署方法
