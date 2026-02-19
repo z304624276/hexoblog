@@ -3,7 +3,7 @@ title: pocketbase镜像打包方法
 date: 2026-02-10 01:22:05
 categories: [后端, Sqlite]
 tags: [pocketbase]
-cover: https://img.tanlugeek.dpdns.org/i/2026/02/13/698f4566e7ec0.webp
+cover:
 ---
 
 # pocketbase镜像打包方法
