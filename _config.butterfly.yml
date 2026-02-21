@@ -71,10 +71,10 @@ avatar:
 disable_top_img: false
 
 # 如果頁面未設置橫幅，則顯示默認的橫幅圖片
-default_top_img: https://img.tanlugeek.dpdns.org/i/2026/02/14/698f4e8e24418.webp
+default_top_img: https://img.datebase.de5.net/file/1771692879580_69760963544dd.webp
 
 # 主頁的橫幅圖片
-index_img: https://img.tanlugeek.dpdns.org/i/2026/02/14/698f4e8e24418.webp
+index_img: https://img.datebase.de5.net/file/1771692879580_69760963544dd.webp
 
 # 歸檔頁的橫幅圖片
 archive_img:
@@ -101,7 +101,7 @@ footer_img: true
 # 網站背景
 # 可以設置為顏色或圖片
 # 圖片格式: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://img.tanlugeek.dpdns.org/i/2026/02/14/698f4e8e24418.webp)
+background: url(https://img.datebase.de5.net/file/1771692879580_69760963544dd.webp)
 
 # 封面設置
 cover:
