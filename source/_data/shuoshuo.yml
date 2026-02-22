@@ -1,5 +1,5 @@
 - author: 阿超
-  avatar: https://img.tanlugeek.dpdns.org/i/2026/01/17/696b0d4c26b22.png
+  avatar: https://img.datebase.de5.net/file/1771692837013_696b0d4c26b22.png
   date: 2026-02-11 01:13:10
   key: key-1
   content: |
@@ -7,6 +7,22 @@
   tags:
     - tags1
     - tags2
+
+- author: 阿超
+  avatar: https://img.datebase.de5.net/file/1771692837013_696b0d4c26b22.png
+  date: 2026-02-22 18:05:10
+  key: key-1
+  content: |
+    2月小结，开始写博客记录学习过程。
+    2月份做了几个项目
+    1. 创建hexo博客，并部署到github，当作学习笔记。
+    2. 制作了一个导航站点，前端用Vercel部署，后端用的supabase的免费额度。用来记录需要用到网址。
+    3. 搭建了一个图床，前端用cloudflare部署，存储用的Telegram和HuggingFace，S3配置都可以，是用别人写好的项目自行搭建的。
+    4. 制作了一个网站，用来管理免费域名的DNS，有dnshe的域名，和托管到cloudflare的域名。前端通过cloudflare来部署，后端用cloudflare的d1数据库，用来保存api token,属于无服务器项目。
+  tags:
+    - 总结
+
+
 # - author: Butterfly
 #   avatar: https://butterfly.js.org/img/avatar.png
 #   date: 2024-06-20 23:33:26
