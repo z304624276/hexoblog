@@ -85,8 +85,8 @@ Origin Rules中，添加规则，
 节点开启tls 
 TLS源服务器创建证书
 
-公钥文件路径：/root/cert/natcf677787xyz.crt
-密钥文件路径：/root/cert/natcf677787xyz.key
+公钥文件路径：/root/cert/xxxx.crt
+密钥文件路径：/root/cert/xxxx.key
 
 申请cf的15年证书
 
@@ -110,7 +110,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/insta
 ```
 ## 总结
 
-1.nat小鸡笔记
+1.套CF只需要设置回源规则，两种模式都一样，不同的是，SSL/TLS是用完全模式还是用灵活模式，灵活模式下，只需要设置回源规则，完全模式下，需要设置回源规则和SSL/TLS，SSL/TLS证书仅对 Cloudflare 与源服务器之间的加密有效。
+
 
 
 
