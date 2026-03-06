@@ -3,7 +3,7 @@ title: Windows10桌面背景图路径寻找
 date: 2026-02-26 14:51:47
 categories: [杂谈]
 tags: [windows10]
-cover:  https://img.datebase.de5.net/file/test/1772041265661_giopic_20260225T174058187Z_905.jpeg
+cover:  https://img.datebase.de5.net/file/test/aThPzEPm.webp
 ---
 
 ## Windows10桌面背景图路径寻找

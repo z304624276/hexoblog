@@ -3,7 +3,7 @@ title: docker镜像推送
 date: 2026-02-12 23:41:30
 categories: [后端, Docker]
 tags: [docker]
-cover: https://img.datebase.de5.net/file/1771692863234_698f45b74bd88.jpg
+cover: https://img.datebase.de5.net/file/test/1772033179266_8c724dd10e24a011f912964c9faff04c.png
 ---
 
 # docker镜像推送

@@ -3,7 +3,7 @@ title: nat小鸡使用记录
 date: 2026-02-25 00:36:06
 categories: [杂谈]
 tags: [nat]
-cover:
+cover:  https://img.datebase.de5.net/file/test/1772075945986_giopic_20260226T031858601Z_818.jpeg
 ---
 
 # nat小鸡使用记录以免忘记
