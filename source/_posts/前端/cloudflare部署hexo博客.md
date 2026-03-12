@@ -3,7 +3,7 @@ title: cloudflare部署hexo博客
 date: 2026-02-19 11:06:41
 categories: [前端]
 tags: [hexo]
-cover:  https://img.datebase.de5.net/file/test/V5KC4NT5.webp
+cover:  https://img.datebase.de5.net/file/test/1772034623501_giopic_20260225T155012579Z_442.webp
 ---
 
 # cloudflare部署hexo博客

@@ -3,7 +3,7 @@ title: cloudflare部署D1
 date: 2026-02-26 22:14:43
 categories: [前端]
 tags: [cloudflare, D1]
-cover:
+cover:  https://img.datebase.de5.net/file/test/1772076279682_18018512951168384.webp
 ---
 
 ## cloudflare部署D1
