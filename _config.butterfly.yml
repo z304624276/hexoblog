@@ -191,8 +191,8 @@ subtitle:
   source: false
   # 如果關閉打字機效果，副標題將僅顯示 sub 的第一行內容
   sub:
-    - 今日事&#44;今日畢
-    - Never put off till tomorrow what you can do today
+    - 今日事&#44;今日毕，记录每一天
+    - Do today's work today and record every day
 
 # 首頁文章佈局
 # 1: 行佈局
@@ -323,8 +323,8 @@ footer:
         #   url: /talking/
         # - title: 示例
         #   url: /link/
-        - title: 友鏈
-          url: /links/
+        - title: 收藏
+          url: /link/
   - content:
     - title: 框架
       item:
