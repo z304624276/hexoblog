@@ -26,9 +26,8 @@ cover:  https://img.178981.xyz/file/test/KPYpmqn2.jpeg
 ```json
 {
   "registry-mirrors": [
-    "https://registry.docker-cn.com",
-    "https://hub-mirror.c.163.com",
-    "https://mirror.baidubce.com"
+    "https://docker.1ms.run/",
+    "https://docker.xuanyuan.me"
   ]
 }
 ```
