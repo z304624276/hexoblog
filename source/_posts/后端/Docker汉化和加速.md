@@ -3,7 +3,7 @@ title: Docker Desktop汉化和加速
 date: 2026-03-18 22:03:12
 categories: [后端,docker]
 tags:   [docker]
-cover:  https://img.178981.xyz/file/test/960Btz0s.jpeg
+cover:  https://img.178981.xyz/file/test/tdmsGSgU.jpeg
 ---
 
 
