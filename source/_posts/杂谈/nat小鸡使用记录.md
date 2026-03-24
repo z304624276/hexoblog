@@ -11,7 +11,7 @@ cover:  https://img.178981.xyz/file/test/1772075945986_giopic_20260226T031858601
 
 ## 1.ArgoSBX小钢炮脚本
 
-网址： https://yonggekkk.github.io/argosbx/
+[ArgoSBX小钢炮脚本](https://yonggekkk.github.io/argosbx/)
 
 主要介绍：
 
@@ -49,7 +49,7 @@ host设置为解析的域名
 
 443端口同理，只是端口只能用443
 
-CF优选网址： https://api.uouin.com/cloudflare.html
+[CF优选网址](https://api.uouin.com/cloudflare.html)
 
 ### 主要是给自己记录，怕忘记了，看不懂的，请勿使用
 
