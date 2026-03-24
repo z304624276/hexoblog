@@ -63,7 +63,7 @@ favicon: /img/favicon.png
 # 頭像設置
 avatar:
   # 頭像圖片鏈接
-  img: https://img.178981.xyz/file/Kiy70kub.png
+  img: https://img.178981.xyz/file/3rJvi5hh.png
   # 是否啟用頭像效果
   effect: false
 
@@ -71,10 +71,10 @@ avatar:
 disable_top_img: false
 
 # 如果頁面未設置橫幅，則顯示默認的橫幅圖片
-default_top_img: https://img.178981.xyz/file/1771692611092_87894.webp
+default_top_img: https://img.178981.xyz/file/mEmg35vb.webp
 
 # 主頁的橫幅圖片
-index_img: https://img.178981.xyz/file/1771692611092_87894.webp
+index_img: https://img.178981.xyz/file/mEmg35vb.webp
 
 # 歸檔頁的橫幅圖片
 archive_img:
