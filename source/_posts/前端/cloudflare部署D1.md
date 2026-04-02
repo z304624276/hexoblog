@@ -1,7 +1,7 @@
 ---
 title: cloudflare部署D1
 date: 2026-02-26 22:14:43
-categories: [前端]
+categories: [前端,cloudflare]
 tags: [cloudflare, D1]
 cover:  https://img.178981.xyz/file/test/h3IXWx9a.png
 ---
