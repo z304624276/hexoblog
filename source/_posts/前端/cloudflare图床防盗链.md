@@ -3,7 +3,7 @@ title: cloudflare图床防盗链
 date: 2026-03-16 17:27:31
 categories: [前端,cloudflare,图床]
 tags: [cloudflare, R2]
-cover:  https://img.178981.xyz/file/test/fq6LUKRR.jpeg
+cover:  https://qncdn.178981.xyz/test/fq6LUKRR.jpeg
 ---
 
 ## 前言

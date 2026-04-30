@@ -3,7 +3,7 @@ title: nodejs框架-express
 date: 2026-02-12 00:23:51
 categories: [后端, Node]
 tags: [express]
-cover: https://img.178981.xyz/file/test/ZZfHNBO3.webp
+cover: https://qncdn.178981.xyz/test/20260430171211806.png
 ---
 
 ### Nodejs修改要重启的问题

@@ -3,7 +3,7 @@ title: nat小鸡使用记录
 date: 2026-02-25 00:36:06
 categories: [杂谈]
 tags: [nat]
-cover:  https://img.178981.xyz/file/test/GxVV70Ew.jpeg
+cover:  https://qncdn.178981.xyz/test/GxVV70Ew.jpeg
 ---
 
 # nat小鸡使用记录以免忘记

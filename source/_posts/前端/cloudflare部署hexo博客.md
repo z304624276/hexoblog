@@ -3,7 +3,7 @@ title: cloudflare部署hexo博客
 date: 2026-02-19 11:06:41
 categories: [前端,cloudflare,hexo]
 tags: [hexo]
-cover:  https://img.178981.xyz/file/test/FMAJURmQ.jpeg
+cover:  https://qncdn.178981.xyz/test/FMAJURmQ.jpeg
 ---
 
 # cloudflare部署hexo博客

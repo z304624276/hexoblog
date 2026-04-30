@@ -3,7 +3,7 @@ title: docker镜像推送
 date: 2026-02-12 23:41:30
 categories: [后端, Docker]
 tags: [docker]
-cover: https://img.178981.xyz/file/test/PAT0QxVM.jpeg
+cover: https://qncdn.178981.xyz/test/20260430171105686.png
 ---
 
 # docker镜像推送

@@ -3,7 +3,7 @@ title: Windows10桌面背景图路径寻找
 date: 2026-02-26 14:51:47
 categories: [杂谈]
 tags: [windows10]
-cover:  https://img.178981.xyz/file/test/CLeg0T2A.jpeg
+cover:  https://qncdn.178981.xyz/test/CLeg0T2A.jpeg
 ---
 
 ## Windows10桌面背景图路径寻找
