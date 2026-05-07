@@ -956,7 +956,7 @@ category_ui:
 tag_ui:
 
 # 拉伸行使每行寬度相等
-text_align_justify: false
+text_align_justify: true
 
 # 為頁眉和頁腳添加遮罩
 mask:
@@ -970,9 +970,9 @@ preloader:
   # 資源
   # 1. 全屏加載
   # 2. 進度條
-  source: 1
+  source: 2
   # pace 主題 (參見 https://codebyzach.github.io/pace/)
-  pace_css_url:
+  pace_css_url: 
 
 # 頁面過渡效果
 enter_transitions: true
@@ -983,13 +983,13 @@ display_mode: light
 # 美化文章內容的配置
 beautify:
   # 是否啟用美化
-  enable: false
+  enable: true
   # 指定美化的範圍 (site 或 post)
-  field: post
+  field: site
   # 指定標題前綴圖標，如 '\f0c1'
-  title-prefix-icon:
+  title-prefix-icon: '\f0c1'
   # 指定標題前綴圖標的顏色，如 '#F47466'
-  title-prefix-icon-color:
+  title-prefix-icon-color:'#F47466'
 
 # 全局字體設置
 # 除非您知道它們的工作原理，否則不要修改以下設置
@@ -1053,7 +1053,7 @@ canvas_fluttering_ribbon:
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   # 是否啟用 canvas_nest
-  enable: false
+  enable: true
   # 線條顏色，默認: '0,0,0'; RGB 值: (R,G,B).(注意: 使用 ',' 分隔.)
   color: '0,0,255'
   # 線條的不透明度 (0~1)
@@ -1076,7 +1076,7 @@ fireworks:
 # 鼠標點擊效果: 心形符號
 click_heart:
   # 是否啟用心形符號效果
-  enable: false
+  enable: true
   # 是否在移動設備上啟用
   mobile: false
 
