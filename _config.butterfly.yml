@@ -451,7 +451,7 @@ aside:
     post_count: true
     # 是否顯示最後推送日期
     last_push_date: true
-    sort_order:
+    sort_order: 
     # 發佈日期與當前日期的時間差
     # 格式：Month/Day/Year Time 或 Year/Month/Day Time
     # 如果不啟用此功能，請留空
@@ -552,11 +552,11 @@ wordcount:
 # 不蒜子 PV / UV 統計
 busuanzi:
   # 網站 UV 統計
-  site_uv: false
+  site_uv: true
   # 網站 PV 統計
-  site_pv: false
+  site_pv: true
   # 頁面 PV 統計
-  page_pv: false
+  page_pv: true
 
 # --------------------------------------
 # 數學公式設置
@@ -1286,3 +1286,4 @@ CDN:
   custom_format:
 
   option:
+    busuanzi:  https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
