@@ -989,7 +989,7 @@ beautify:
   # 指定標題前綴圖標，如 '\f0c1'
   title-prefix-icon: '\f0c1'
   # 指定標題前綴圖標的顏色，如 '#F47466'
-  title-prefix-icon-color:'#F47466'
+  title-prefix-icon-color: '#F47466'
 
 # 全局字體設置
 # 除非您知道它們的工作原理，否則不要修改以下設置
