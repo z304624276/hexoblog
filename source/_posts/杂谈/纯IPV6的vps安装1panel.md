@@ -32,19 +32,23 @@ Warp 为 Cloudflare 提供的一种加速网络连接的服务，可以简单理
 ls /dev/nat
 如果没有开启 tun，请自行检索如何开启，开启之后执行下面命令，安装 warp
 
+```
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
+```
+
 命令执行完成会先出现语言选择，按2回车，选择中文，之后会出现一个菜单，菜单项第一项应该如下。
 
+```
 为 IPv6 only 添加 WARP IPv4 网络接口 (bash menu.sh 4)
 作为 IPv6 VPS，输入 1 回车之后，其余选项全都回车默认即可。操作成功会出现大致如下的输出
 后台获取 WARP IP 中,最大尝试3次……
 第1次尝试 
-已成功获取 WARP Free 网络, 工作模式: 全局 
-==============================================================
+已成功获取 WARP Free 网络, 工作模式: 全局  
 IPv4: 104.28.254.16 芬兰  Cloudflare, Inc. 
 IPv6: 2a01:4f9:3051:41e7::1b3e:xxxx 芬兰  Hetzner Online GmbH 
 恭喜！WARP Free 已开启，总耗时:18秒， 脚本当天运行次数:，累计运行次数: 
 IPv6 优先 , 工作模式: 全局 
+```
 此时除了不能通过 IPv4 访问该机器，则与普通 VPS 无异，拥有 IPv4 出口，及可以通过 IPv6 的全部端口访问该 VPS（前提是访问拥有 IPv6 地址）。
 
 3.搭建 1Panel 面板
@@ -52,7 +56,9 @@ IPv6 优先 , 工作模式: 全局
 
 官网通用一键脚本
 
+```
 bash -c "$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)"
+```
 按照过程中会交互式提示端口、面板入口、用户名及密码，需要注意，请将面板端口设置为 Cloudflare CDN 支持的 http 端口，建议端口如下。
 
 Cloudflare CDN 支持端口
