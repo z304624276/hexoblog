@@ -1,9 +1,9 @@
 ---
 title: node版本管理工具
 date: 2026-05-10 11:26:14
-categories:
-tags:
-cover:
+categories: [后端, Node]
+tags: [Node]
+cover: 
 ---
 
 ## nvm

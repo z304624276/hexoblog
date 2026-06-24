@@ -3,7 +3,7 @@ title: 玩转纯IPV6的vps
 date: 2026-05-10 23:53:14
 categories: [杂谈]
 tags: [ipv6,vps]
-cover:
+cover:  https://qncdn.178981.xyz/test/20260625005842487.png?imageslim
 ---
 
 

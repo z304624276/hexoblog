@@ -1,9 +1,9 @@
 ---
 title: nginx均衡负载
 date: 2026-05-10 23:44:16
-categories:
-tags:
-cover:
+categories: [前端,nginx]
+tags: [nginx]
+cover: https://qncdn.178981.xyz/test/20260625005618668.png?imageslim
 ---
 
 ## nginx均衡负载

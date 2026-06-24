@@ -1,9 +1,9 @@
 ---
 title: pnpm镜像源管理
 date: 2026-05-10 11:49:53
-categories:
-tags:
-cover:
+categories: [前端,pnpm]
+tags:    [pnpm]
+cover: https://qncdn.178981.xyz/test/20260625005647501.png?imageslim
 ---
 
 ## pnpm镜像源操作指南
@@ -55,4 +55,4 @@ npm/
 北京外国语大学镜像源	npm config set registry https://mirrors.bfsu.edu.cn/npm/
 南京大学镜像源	npm config set registry https://mirrors.nju.edu.cn/npm/
 
-以上都是AI推荐的镜像源，其他镜像源自行百度。
+以上都是AI推荐的镜像源，其他镜像源自行搜索。

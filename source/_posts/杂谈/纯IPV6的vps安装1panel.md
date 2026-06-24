@@ -1,9 +1,9 @@
 ---
 title: 纯IPV6的vps安装1panel
 date: 2026-05-10 23:05:32
-categories:
-tags:
-cover:
+categories: [杂谈,ipv6]
+tags: [1panel]
+cover:  https://qncdn.178981.xyz/test/20260625005816305.png?imageslim
 ---
 
 ## 纯IPV6的vps安装1panel
@@ -14,10 +14,10 @@ cover:
 或者Debian11及以上，以防在纯IPV6访问面板出现问题。
 操作步骤
 
-1.连接服务器
+### 1.连接服务器
 首先需要判断本机是否有 IPv6 地址，可以通过访问 https://ip.gs 检测是否拥有 IPv6
 
-2.添加 IPv4 出口地址
+### 2.添加 IPv4 出口地址
 为 VPS 下载或访问一些网络资源，VPS 需要通过网络进行访问，而一些网站如 github 可能只能通过 IPv4 访问，如果 IPv6 的主机没有 连内网 IPv4 都没有，则会访问网络资源失败，影响后续的安装及以后服务的搭建部署。
 
 可以通过如下命令进行尝试，如果 ping 成功，则说明有 IPv4 出口，拥有网络资源的访问能力
@@ -51,7 +51,7 @@ IPv6 优先 , 工作模式: 全局
 ```
 此时除了不能通过 IPv4 访问该机器，则与普通 VPS 无异，拥有 IPv4 出口，及可以通过 IPv6 的全部端口访问该 VPS（前提是访问拥有 IPv6 地址）。
 
-3.搭建 1Panel 面板
+### 3.搭建 1Panel 面板
 进入 1Panel 官方安装文档页，根据 VPS 系统，复制指令，笔者的 VPS 系统是 Ubuntu-22.04-x64，使用如下指令
 
 官网通用一键脚本
@@ -90,5 +90,3 @@ Cloudflare CDN 配置
 
 本机仅有 IPv4 地址情况下通过 SSH 连接 IPv6 VPS
 不建议折腾，操作繁琐，收益较低，在本机无 IPv6 地址情况下，先 SSH 到其他 VPS，再利用其他 VPS 登陆到 IPv6 的 VPS。
-
-互联网小幻创作，仅供个人使用，如有侵权，请联系删除
