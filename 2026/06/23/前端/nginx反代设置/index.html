@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>nginx反代设置 | 啊超的博客</title><meta name="author" content="阿超"><meta name="copyright" content="阿超"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="nginx反代设置部署项目出错，搞半天发现是反代的问题简单记录一下 12345678910location &#x2F;api &#123;        proxy_pass http:&#x2F;&#x2F;127.0.0.1:8787;        proxy_http_version 1.1;        proxy_set_header Upgrade $http_upgrade;        proxy_se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx反代设置">
+<meta property="og:url" content="https://blog.tanluman.de5.net/2026/06/23/%E5%89%8D%E7%AB%AF/nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="啊超的博客">
+<meta property="og:description" content="nginx反代设置部署项目出错，搞半天发现是反代的问题简单记录一下 12345678910location &#x2F;api &#123;        proxy_pass http:&#x2F;&#x2F;127.0.0.1:8787;        proxy_http_version 1.1;        proxy_set_header Upgrade $http_upgrade;        proxy_se">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qncdn.178981.xyz/test/20260625005536381.png?imageslim">
+<meta property="article:published_time" content="2026-06-23T21:28:17.000Z">
+<meta property="article:modified_time" content="2026-06-24T17:01:38.792Z">
+<meta property="article:author" content="阿超">
+<meta property="article:tag" content="nginx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qncdn.178981.xyz/test/20260625005536381.png?imageslim"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "nginx反代设置",
+  "url": "https://blog.tanluman.de5.net/2026/06/23/%E5%89%8D%E7%AB%AF/nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE/",
+  "image": "https://qncdn.178981.xyz/test/20260625005536381.png?imageslim",
+  "datePublished": "2026-06-23T21:28:17.000Z",
+  "dateModified": "2026-06-24T17:01:38.792Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "阿超",
+      "url": "https://blog.tanluman.de5.net"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.tanluman.de5.net/2026/06/23/%E5%89%8D%E7%AB%AF/nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'nginx反代设置',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/url(https:/qncdn.178981.xyz/test/mEmg35vb.webp));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://qncdn.178981.xyz/test/3rJvi5hh.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 收藏</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://qncdn.178981.xyz/test/20260625005536381.png?imageslim);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">啊超的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">nginx反代设置</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 收藏</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">nginx反代设置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-23T21:28:17.000Z" title="发表于 2026-06-23 21:28:17">2026-06-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-24T17:01:38.792Z" title="更新于 2026-06-24 17:01:38">2026-06-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已經過了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章內容可能已過時。&quot;,&quot;postUpdate&quot;:&quot;2026-06-24 17:01:38&quot;}" hidden></div><h2 id="nginx反代设置"><a href="#nginx反代设置" class="headerlink" title="nginx反代设置"></a>nginx反代设置</h2><p>部署项目出错，搞半天发现是反代的问题<br>简单记录一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">location /api &#123;</span><br><span class="line">        proxy_pass http://127.0.0.1:8787;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &#x27;upgrade&#x27;;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_cache_bypass $http_upgrade;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面这段代码，执行请求到 域名&#x2F;api 就会转发到 127.0.0.1:8787，<br>我希望是转发到反代的项目首页，但是实际请求到的地址是 <a target="_blank" rel="noopener" href="http://127.0.0.1:8787/api">http://127.0.0.1:8787/api</a><br>需要后端有这个路由，否则会报404</p>
+<p>如果后端路由是 &#x2F;，想让 &#x2F;api 映射到后端的 &#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">location /api/ &#123;</span><br><span class="line">        proxy_pass http://127.0.0.1:8787/;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &#x27;upgrade&#x27;;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_cache_bypass $http_upgrade;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改成这样，http:&#x2F;&#x2F;域名&#x2F;api&#x2F;test 会转发到 <a target="_blank" rel="noopener" href="http://127.0.0.1:18787/test">http://127.0.0.1:18787/test</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.tanluman.de5.net">阿超</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.tanluman.de5.net/2026/06/23/%E5%89%8D%E7%AB%AF/nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE/">https://blog.tanluman.de5.net/2026/06/23/前端/nginx反代设置/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.tanluman.de5.net" target="_blank">啊超的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/nginx/">nginx</a></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付寶"/></a><div class="post-qr-code-desc">支付寶</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/06/25/%E6%9D%82%E8%B0%88/ipv6%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E6%80%BB%E7%BB%93/" title="ipv6服务器踩坑总结"><img class="cover" src="https://qncdn.178981.xyz/test/20260625005954169.png?imageslim" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">ipv6服务器踩坑总结</div></div><div class="info-2"><div class="info-item-1">ipv6服务器踩坑总结ipv6服务器是便宜，但是玩起来还是很蛋疼，很多坑，记录一下 1.docker容器开启ipv6docker容器默认是关闭ipv6的，需要手动开启 宝塔设置docker的ipv6在宝塔的docker设置中，找到ipv6设置，开启ipv6然后配置ipv6地址，本机ipv6后面添加&#x2F;64，比如本机ipv6是2409:8a00:3:2::1，那么容器ipv6地址就是2409:8a00:3:2::1/64然后再在docker网络里添加ipv6网络添加的方法和1panel一样 1panel设置docker的ipv6用1panel面板，对docker的支持比较友好，设置ipv6相对简单，在ipv6设置里设置ipv6地址+&#x2F;64，勾选ip6tables和experimental然后在网络中创建一个ipv6的docker网络，因为我是纯IPV6服务器，就不设置ipv4地址了，只需要填写ipv6的子网就行了，子网是ip地址少最后一段比如 12345678xxxx:xxxx:8x:xxxx::22d #假如这是我的ipv6地址（随便编的）#可以使用不同的 /6...</div></div></div></a><a class="pagination-related" href="/2026/06/13/%E5%89%8D%E7%AB%AF/vue%E7%9A%84nginx%E8%AE%BE%E7%BD%AE/" title="vue的nginx设置"><img class="cover" src="https://qncdn.178981.xyz/test/20260625005740689.png?imageslim" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">vue的nginx设置</div></div><div class="info-2"><div class="info-item-1">vue的nginx设置1. vue项目打包1npm run build  2. 打包后文件在项目根目录下会生成一个dist文件夹，这个文件夹就是打包后的文件 3. 配置nginx123456789101112131415161718# 设置反代location /api/ &#123;    proxy_pass https://xxx.com/;    proxy_set_header Host xxx.com;    proxy_set_header X-Real-IP $remote_addr;    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;    proxy_set_header X-Forwarded-Proto $scheme;        # 注意：不需要 rewrite，proxy_pass 末尾带 / 会自动拼接&#125;# 先处理图片等静态资源（更具体的路径放前面）# 最后再处理前端路由location / &#123;    try_files $uri $uri/ /ind...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/05/10/%E5%89%8D%E7%AB%AF/nginx%E5%9D%87%E8%A1%A1%E8%B4%9F%E8%BD%BD/" title="nginx均衡负载"><img class="cover" src="https://qncdn.178981.xyz/test/20260625005618668.png?imageslim" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-10</div><div class="info-item-2">nginx均衡负载</div></div><div class="info-2"><div class="info-item-1">nginx均衡负载 宝塔配置nginx均衡负载  在 server 块上方添加12345678910111213141516171819upstream backend_servers &#123;    # ip_hash;  # 如果需要会话保持，取消注释    # least_conn;  # 最少连接数策略，取消注释    server 192.168.1.10:8080 weight=3;  # 权重为3    server 192.168.1.11:8080;           # 默认权重为1    server 192.168.1.12:8080 max_fails=3 fail_timeout=30s;  # 健康检查&#125;server&#123;    listen 80;    listen 443 ssl;        # ... 其余配置保持不变    location / &#123;    proxy_pass http://backend_servers;    &#125;&#125; 总结需要注意的地方： upstream块在 ser...</div></div></div></a><a class="pagination-related" href="/2026/06/13/%E5%89%8D%E7%AB%AF/vue%E7%9A%84nginx%E8%AE%BE%E7%BD%AE/" title="vue的nginx设置"><img class="cover" src="https://qncdn.178981.xyz/test/20260625005740689.png?imageslim" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-06-13</div><div class="info-item-2">vue的nginx设置</div></div><div class="info-2"><div class="info-item-1">vue的nginx设置1. vue项目打包1npm run build  2. 打包后文件在项目根目录下会生成一个dist文件夹，这个文件夹就是打包后的文件 3. 配置nginx123456789101112131415161718# 设置反代location /api/ &#123;    proxy_pass https://xxx.com/;    proxy_set_header Host xxx.com;    proxy_set_header X-Real-IP $remote_addr;    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;    proxy_set_header X-Forwarded-Proto $scheme;        # 注意：不需要 rewrite，proxy_pass 末尾带 / 会自动拼接&#125;# 先处理图片等静态资源（更具体的路径放前面）# 最后再处理前端路由location / &#123;    try_files $uri $uri/ /ind...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://qncdn.178981.xyz/test/3rJvi5hh.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">阿超</div><div class="author-info-description">一个技术爱好者 / 记录生活</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/z304624276"><i class="fab fa-github"></i><span>我的Github仓库</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">這是一個公告。还没想好写什么</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">nginx反代设置</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/06/25/%E6%9D%82%E8%B0%88/ipv6%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E6%80%BB%E7%BB%93/" title="ipv6服务器踩坑总结"><img src="https://qncdn.178981.xyz/test/20260625005954169.png?imageslim" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ipv6服务器踩坑总结"/></a><div class="content"><a class="title" href="/2026/06/25/%E6%9D%82%E8%B0%88/ipv6%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E6%80%BB%E7%BB%93/" title="ipv6服务器踩坑总结">ipv6服务器踩坑总结</a><time datetime="2026-06-25T00:32:59.000Z" title="发表于 2026-06-25 00:32:59">2026-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/23/%E5%89%8D%E7%AB%AF/nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE/" title="nginx反代设置"><img src="https://qncdn.178981.xyz/test/20260625005536381.png?imageslim" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="nginx反代设置"/></a><div class="content"><a class="title" href="/2026/06/23/%E5%89%8D%E7%AB%AF/nginx%E5%8F%8D%E4%BB%A3%E8%AE%BE%E7%BD%AE/" title="nginx反代设置">nginx反代设置</a><time datetime="2026-06-23T21:28:17.000Z" title="发表于 2026-06-23 21:28:17">2026-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/06/13/%E5%89%8D%E7%AB%AF/vue%E7%9A%84nginx%E8%AE%BE%E7%BD%AE/" title="vue的nginx设置"><img src="https://qncdn.178981.xyz/test/20260625005740689.png?imageslim" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue的nginx设置"/></a><div class="content"><a class="title" href="/2026/06/13/%E5%89%8D%E7%AB%AF/vue%E7%9A%84nginx%E8%AE%BE%E7%BD%AE/" title="vue的nginx设置">vue的nginx设置</a><time datetime="2026-06-13T11:42:00.000Z" title="发表于 2026-06-13 11:42:00">2026-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/17/%E5%90%8E%E7%AB%AF/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8BNode%E9%A1%B9%E7%9B%AE/" title="记录一下Node项目"><img src="https://qncdn.178981.xyz/test/20260625003036428.png?imageslim" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录一下Node项目"/></a><div class="content"><a class="title" href="/2026/05/17/%E5%90%8E%E7%AB%AF/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8BNode%E9%A1%B9%E7%9B%AE/" title="记录一下Node项目">记录一下Node项目</a><time datetime="2026-05-17T13:27:14.000Z" title="发表于 2026-05-17 13:27:14">2026-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/05/10/%E6%9D%82%E8%B0%88/%E7%8E%A9%E8%BD%AC%E7%BA%AFIPV6%E7%9A%84vps/" title="玩转纯IPV6的vps"><img src="https://qncdn.178981.xyz/test/20260625005842487.png?imageslim" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="玩转纯IPV6的vps"/></a><div class="content"><a class="title" href="/2026/05/10/%E6%9D%82%E8%B0%88/%E7%8E%A9%E8%BD%AC%E7%BA%AFIPV6%E7%9A%84vps/" title="玩转纯IPV6的vps">玩转纯IPV6的vps</a><time datetime="2026-05-10T23:53:14.000Z" title="发表于 2026-05-10 23:53:14">2026-05-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://qncdn.178981.xyz/test/20260625005536381.png?imageslim);"><div class="footer-flex"><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">文檔</div><div class="footer-flex-content"><a href="/archives/" target="_blank" title="🚀 归档">🚀 归档</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">其他</div><div class="footer-flex-content"><a href="/link/" target="_blank" title="收藏">收藏</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">框架</div><div class="footer-flex-content"><a href="https://hexo.io/zh-cn/" target="_blank" title="Hexo">Hexo</a><a href="https://butterfly.js.org/" target="_blank" title="Butterfly">Butterfly</a></div></div></div></div><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By 阿超</span><span class="framework-info"><span class="footer-separator">|</span><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
